@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>MVC-Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/bulma.min.css">
+    </head>
+    <body>
+        <nav class="navbar is-dark">
+            <div class="navbar-brand">
+                <span class="navbar-item"><b>MVC-Example</b></span>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" asp-controller="Site" asp-action="Home">Home</a>
+                    <a class="navbar-item" asp-controller="Site" asp-action="AllEmployees">All Employees</a>
+                    <a class="navbar-item" asp-controller="Site" asp-action="NewEmployee">New Employee</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container is-fluid">
+            @RenderBody()
+        </div>
+    </body>
+</html>

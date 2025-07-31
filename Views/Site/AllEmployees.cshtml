@@ -1,0 +1,38 @@
+@using MVC_Example.Models;
+
+<br><br><br>
+
+<h1 class="title is-1 has-text-centered">All Employees</h1>
+
+<br>
+
+<table class="table is-striped is-hoverable is-fullwidth">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Employee employee in (IEnumerable<Employee>)ViewData["Data"])
+        {
+            <tr>
+                <td>@employee.Id</td>
+                <td>@employee.Name</td>
+                <td>@employee.Salary</td>
+                <td>
+                    <form style="display: inline;" asp-controller="Site" asp-action="EditEmployee" method="get">
+                        <input type="hidden" name="employeeId" value="@employee.Id">
+                        <input class="button is-warning" type="submit" value="Edit">
+                    </form>
+                    <form style="display: inline; sp-controller="Site" asp-action="DeleteEmployee" method="get">
+                        <input type="hidden" name="employeeId" value="@employee.Id">
+                        <input class="button is-danger" type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

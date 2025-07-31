@@ -1,0 +1,22 @@
+<br><br><br>
+
+<h1 class="title is-1 has-text-centered">New Employee</h1>
+
+<br>
+
+<form asp-asp-controller="Site" asp-action="NewEmployee" method="post">
+    <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+            <input class="input" type="text" name="employeeName">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Salary</label>
+        <div class="control">
+            <input class="input" type="text" name="employeeSalary">
+        </div>
+    </div>
+    <input class="button is-link" type="submit" value="Submit">
+    <a class="button is-secondary" asp-controller="Site" asp-action="AllEmployees">Back</a>
+</form>
